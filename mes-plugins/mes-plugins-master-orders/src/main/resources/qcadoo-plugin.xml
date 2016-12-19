@@ -119,6 +119,17 @@
                                  method="checkOrderNumber"/>
         </model:model-hook>
 
+        <model:model model="masterOrdersPositionDto" resource="model/masterOrdersPositionDto.xml"/>
+        <model:model model="masterOrdersPosition" resource="model/masterOrdersPosition.xml"/>
+
+        <menu:menu-item name="masterOrdersPositionDto" category="orders" view="masterOrdersPositionList" defaultAuthorizationRole="ROLE_PLANNING"/>
+
+        <view:view resource="view/masterOrdersPositionList.xml"/>
+        <view:view resource="view/masterOrdersPositionDetails.xml"/>
+
+
+
+
         <menu:menu-item name="masterOrders" category="orders"
                         view="masterOrdersList" defaultAuthorizationRole="ROLE_PLANNING"/>
 
