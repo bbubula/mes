@@ -170,5 +170,4 @@
                 class="com.qcadoo.mes.masterOrders.hooks.MasterOrderProductDetailsHooks"
                 method="showErrorWhenCumulatedQuantity"/>-->
     </hooks>
-
 </view>

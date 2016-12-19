@@ -188,6 +188,15 @@ CREATE OR REPLACE VIEW technologies_technologydto AS SELECT technology.id, techn
 -- end
 
 
+-- VIEW: masterorders_masterorderspositiondto
+
+DROP TABLE IF EXISTS masterorders_masterorderspositiondto;
+
+CREATE OR REPLACE VIEW public.masterorders_masterorderspositiondto AS  SELECT masterorder.id,  masterorderdefinition.name,  masterorder.name AS masterordername,  masterorder.number,  masterorder.deadline,  masterorder.masterorderpositionstatus,  masterorder.masterorderquantity,  masterorder.producedorderquantity,  masterorder.comments,  masterorderproduct.lefttorelease,  product.number AS productnumber,  product.name AS productname,  product.unit,  technology.name AS technologyname,  company.name AS companyname,  masterorder.active  FROM masterorders_masterorder masterorder  LEFT JOIN masterorders_masterorderproduct masterorderproduct ON masterorder.id = masterorderproduct.masterorder_id  LEFT JOIN masterorders_masterorderdefinition masterorderdefinition ON masterorder.masterorderdefinition_id = masterorderdefinition.id  LEFT JOIN basic_product product ON masterorder.product_id = product.id  LEFT JOIN basic_company company ON masterorder.company_id = company.id  LEFT JOIN technologies_technology technology ON masterorder.technology_id = technology.id  WHERE masterorder.masterordertype LIKE '%02oneProduct%'  UNION ALL  SELECT masterorder.id,  masterorderdefinition.name,  masterorder.name AS masterordername,  masterorder.number,  masterorder.deadline,  masterorderproduct.masterorderpositionstatus,  masterorderproduct.masterorderquantity,  masterorderproduct.producedorderquantity,  masterorderproduct.comments,  masterorderproduct.lefttorelease,  product.number AS productnumber,  product.name AS productname,  product.unit,  technology.name AS technologyname,  company.name AS companyname,  masterorder.active  FROM masterorders_masterorder masterorder  LEFT JOIN masterorders_masterorderproduct masterorderproduct ON masterorder.id = masterorderproduct.masterorder_id  LEFT JOIN masterorders_masterorderdefinition masterorderdefinition ON masterorder.masterorderdefinition_id = masterorderdefinition.id  LEFT JOIN basic_product product ON masterorderproduct.product_id = product.id  LEFT JOIN basic_company company ON masterorder.company_id = company.id  LEFT JOIN technologies_technology technology ON masterorderproduct.technology_id = technology.id  WHERE masterorder.masterordertype LIKE '%03manyProducts%';
+
+-- end
+
+
 -- VIEW: orders_orderdto
 
 DROP TABLE IF EXISTS orders_orderdto;
