@@ -23,7 +23,7 @@
     ***************************************************************************
 
 -->
-<view defaultAuthorizationRole="ROLE_PLANNING" name="masterOrdersPositionDetails" modelName="masterOrdersPosition"
+<view defaultAuthorizationRole="ROLE_PLANNING" name="masterOrdersPositionDetails" modelName="masterOrderProduct"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.qcadoo.org/view"
       xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd">
 
@@ -166,5 +166,9 @@
         <beforeRender
                 class="com.qcadoo.mes.masterOrders.hooks.MasterOrderProductDetailsHooks"
                 method="fillDefaultTechnology"/>
+        <!--<beforeRender
+                class="com.qcadoo.mes.masterOrders.hooks.MasterOrderProductDetailsHooks"
+                method="showErrorWhenCumulatedQuantity"/>-->
     </hooks>
+
 </view>

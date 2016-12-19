@@ -42,10 +42,11 @@
         <string name="productStatus"/>
         <string name="productComments"/>
         <string name="productQuantity"/>
-        <string name="productCumulatedQuantity"/>
-        <string name="productLeftToRelease"/>
         <string name="productProducedQuantity"/>
         <string name="productUnit"/>
+
+        <string name="productCumulatedQuantity"/>
+        <string name="productLeftToRelease"/>
     </fields>
     <identifier expression="#masterOrderNumber + ' - ' + #masterOrderCompany"/>
     <masterModel plugin="masterOrders" model="masterOrdersPosition" />

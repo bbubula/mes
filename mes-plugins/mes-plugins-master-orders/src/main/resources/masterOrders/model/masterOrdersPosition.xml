@@ -35,12 +35,12 @@
         </belongsTo>
 
 
-        <belongsTo name="product" plugin="basic" model="product"
+       <!-- <belongsTo name="product" plugin="basic" model="product"
                    required="true">
             <validatesWith
                     class="com.qcadoo.mes.masterOrders.validators.MasterOrderProductValidators"
                     method="checkIfCanChangeProduct"/>
-        </belongsTo>
+        </belongsTo>-->
 
         <belongsTo name="technology" plugin="technologies" model="technology">
             <validatesWith
