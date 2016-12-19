@@ -29,25 +29,20 @@
        xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
 
     <fields>
-        <string name="masterOrderDefinition" />
-        <string name="masterOrderNumber" />
+        <string name="name" />
         <string name="masterOrderName" />
-        <datetime name="masterOrderDeadline"/>
-        <string name="masterOrderCompany"/>
-        <string name="masterOrderStatus"/>
-
+        <string name="number" />
+        <datetime name="deadline"/>
+        <string name="masterOrderPositionStatus"/>
+        <string name="masterOrderQuantity"/>
+        <string name="producedOrderQuantity"/>
+        <string name="comments"/>
+        <string name="leftToRelease"/>
         <string name="productNumber"/>
         <string name="productName"/>
-        <string name="productTechnology"/>
-        <string name="productStatus"/>
-        <string name="productComments"/>
-        <string name="productQuantity"/>
-        <string name="productProducedQuantity"/>
-        <string name="productUnit"/>
-
-        <string name="productCumulatedQuantity"/>
-        <string name="productLeftToRelease"/>
+        <string name="unit"/>
+        <string name="technologyName"/>
+        <string name="companyName"/>
     </fields>
-    <identifier expression="#masterOrderNumber + ' - ' + #masterOrderCompany"/>
-    <masterModel plugin="masterOrders" model="masterOrdersPosition" />
+    <masterModel plugin="masterOrders" model="masterOrder" />
 </model>
