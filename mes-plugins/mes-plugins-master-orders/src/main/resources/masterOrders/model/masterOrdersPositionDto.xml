@@ -43,6 +43,8 @@
         <string name="unit"/>
         <string name="technologyName"/>
         <string name="companyName"/>
+        <decimal name="masterOrderId"/>
+        <string name="masterOrderType"/>
     </fields>
     <masterModel plugin="masterOrders" model="masterOrderProduct" />
 </model>

@@ -99,8 +99,8 @@
             <option type="fullscreen" value="true"/>
             <option type="multiselect" value="true"/>
 
-           <listener event="createOrder"
-                      class="com.qcadoo.mes.masterOrders.listeners.MasterOrderDetailsListeners"
+          <listener event="createOrder"
+                      class="com.qcadoo.mes.masterOrders.listeners.MasterOrderPositionDetailsListeners"
                       method="createOrder"/>
         </component>
         <option type="fixedHeight" value="true"/>
