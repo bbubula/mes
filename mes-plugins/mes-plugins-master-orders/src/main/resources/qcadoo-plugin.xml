@@ -120,7 +120,6 @@
         </model:model-hook>
 
         <model:model model="masterOrdersPositionDto" resource="model/masterOrdersPositionDto.xml"/>
-        <model:model model="masterOrdersPosition" resource="model/masterOrdersPosition.xml"/>
 
         <menu:menu-item name="masterOrdersPositionDto" category="orders" view="masterOrdersPositionList" defaultAuthorizationRole="ROLE_PLANNING"/>
 

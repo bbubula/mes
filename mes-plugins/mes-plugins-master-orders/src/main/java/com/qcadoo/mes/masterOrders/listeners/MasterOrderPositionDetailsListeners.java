@@ -27,6 +27,7 @@ import com.google.common.collect.Maps;
 import com.qcadoo.mes.masterOrders.constants.MasterOrderFields;
 import com.qcadoo.mes.masterOrders.constants.MasterOrderProductFields;
 import com.qcadoo.mes.masterOrders.constants.MasterOrderType;
+import com.qcadoo.mes.masterOrders.constants.MasterOrdersPositionFields;
 import com.qcadoo.mes.masterOrders.hooks.MasterOrderDetailsHooks;
 import com.qcadoo.mes.orders.TechnologyServiceO;
 import com.qcadoo.model.api.Entity;
@@ -47,9 +48,10 @@ import java.util.Map;
 public class MasterOrderPositionDetailsListeners {
 
     private static final String L_WINDOW_ACTIVE_MENU = "window.activeMenu";
+    private static final String L_GRID = "grid";
 
     public void createOrder(final ViewDefinitionState view, final ComponentState state, final String[] args) {
-        GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference("grid");
+        GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference(L_GRID);
         List<Entity> selectedEntity = masterOrderPositionComponent.getSelectedEntities();
         if(selectedEntity.size() != 1){
             state.addMessage("You can chose only one position",ComponentState.MessageType.INFO);
@@ -57,7 +59,7 @@ public class MasterOrderPositionDetailsListeners {
             state.addMessage("You have to chose at least one",ComponentState.MessageType.INFO);
         }
         Entity masterOrderPosition = selectedEntity.get(0);
-        BigDecimal masterOrderId = masterOrderPosition.getDecimalField("masterOrderId");
+        BigDecimal masterOrderId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.MASTER_ORDER_ID);
         if (masterOrderId == null) {
             return;
         }
@@ -65,12 +67,12 @@ public class MasterOrderPositionDetailsListeners {
         Map<String, Object> parameters = Maps.newHashMap();
         parameters.put("form.masterOrder", masterOrderId);
 
-        String masterOrderTypeValue = masterOrderPosition.getStringField("masterOrderType");
+        String masterOrderTypeValue = masterOrderPosition.getStringField(MasterOrdersPositionFields.MASTER_ORDER_TYPE);
 
 
         if (masterOrderTypeValue.equals(MasterOrderType.MANY_PRODUCTS.getStringValue())) {
-            BigDecimal productId = masterOrderPosition.getDecimalField("productId");
-            BigDecimal masterOrderProductId = masterOrderPosition.getDecimalField("masterOrderProductId");
+            BigDecimal productId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.PRODUCT_ID);
+            BigDecimal masterOrderProductId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.MASTER_ORDER_PRODUCT_ID);
             parameters.put("form.masterOrderProduct", productId);
             parameters.put("form.masterOrderProductComponent", masterOrderProductId);
         }
