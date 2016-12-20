@@ -31,7 +31,7 @@
 
     <component type="window" name="window" reference="window">
         <ribbon>
-            <template name="standardGridTemplate" excludeItems="actions.copy, actions.delete" excludeGroups="states"/>
+            <template name="standardGridTemplate" excludeItems="actions.new, actions.copy, actions.delete" excludeGroups="states"/>
             <group name="orders">
                 <bigButton name="createOrder" icon="generateIcon24.png" state="disabled">
                    <script>
