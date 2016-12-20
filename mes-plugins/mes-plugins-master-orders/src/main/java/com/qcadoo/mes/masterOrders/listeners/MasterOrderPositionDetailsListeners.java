@@ -49,7 +49,6 @@ public class MasterOrderPositionDetailsListeners {
     private static final String L_WINDOW_ACTIVE_MENU = "window.activeMenu";
 
     public void createOrder(final ViewDefinitionState view, final ComponentState state, final String[] args) {
-        state.addMessage("I'm here !!!!!",ComponentState.MessageType.INFO);
         GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference("grid");
         List<Entity> selectedEntity = masterOrderPositionComponent.getSelectedEntities();
         if(selectedEntity.size() != 1){
@@ -65,6 +64,19 @@ public class MasterOrderPositionDetailsListeners {
 
         Map<String, Object> parameters = Maps.newHashMap();
         parameters.put("form.masterOrder", masterOrderId);
+
+        String masterOrderTypeValue = masterOrderPosition.getStringField("masterOrderType");
+
+
+        if (masterOrderTypeValue.equals(MasterOrderType.MANY_PRODUCTS.getStringValue())) {
+            BigDecimal productId = masterOrderPosition.getDecimalField("productId");
+            BigDecimal masterOrderProductId = masterOrderPosition.getDecimalField("masterOrderProductId");
+            parameters.put("form.masterOrderProduct", productId);
+            parameters.put("form.masterOrderProductComponent", masterOrderProductId);
+        }
+
+
+
         parameters.put(L_WINDOW_ACTIVE_MENU, "orders.productionOrders");
 
         String url = "../page/orders/orderDetails.html";

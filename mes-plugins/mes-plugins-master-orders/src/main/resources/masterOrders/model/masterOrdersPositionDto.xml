@@ -45,6 +45,8 @@
         <string name="companyName"/>
         <decimal name="masterOrderId"/>
         <string name="masterOrderType"/>
+        <decimal name="productId"/>
+        <decimal name = "masterOrderProductId"/>
     </fields>
     <masterModel plugin="masterOrders" model="masterOrderProduct" />
 </model>
