@@ -55,10 +55,10 @@
                 <![CDATA[
                     this.addOnChangeListener({
 						onChange: function(selectedEntitiesArray) {
-							if (selectedEntitiesArray && selectedEntitiesArray.length > 0) {
-								getRibbonItem("orders.createOrder").enable();
+							if (selectedEntitiesArray && selectedEntitiesArray.length == 1) {
+								#{window}.getRibbonItem("orders.createOrder").enable();
 							} else {
-								getRibbonItem("orders.createOrder").disable();
+								#{window}.getRibbonItem("orders.createOrder").disable();
 							}
 						}
 					});
