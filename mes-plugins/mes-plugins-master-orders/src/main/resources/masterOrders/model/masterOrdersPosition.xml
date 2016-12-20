@@ -32,6 +32,41 @@
         <belongsTo name="masterOrder" plugin="masterOrders" model="masterOrder"/>
 
         <belongsTo name="masterOrderProduct" plugin="masterOrders" model="masterOrderProduct"/>
+
+        <belongsTo name="product" plugin="basic" model="product"/>
+
+        <belongsTo name="technology" plugin="technologies" model="technology"/>
+
+        <decimal name="masterOrderQuantity">
+            <validatesRange from="0"/>
+            <validatesUnscaledValue max="9"/>
+            <validatesScale max="5"/>
+        </decimal>
+        <decimal name="cumulatedOrderQuantity">
+            <validatesRange from="0"/>
+            <validatesUnscaledValue max="9"/>
+            <validatesScale max="5"/>
+        </decimal>
+
+        <decimal name="producedOrderQuantity">
+            <validatesRange from="0"/>
+            <validatesUnscaledValue max="9"/>
+            <validatesScale max="5"/>
+        </decimal>
+
+        <decimal name="leftToRelease">
+            <validatesRange from="0"/>
+            <validatesUnscaledValue max="9"/>
+            <validatesScale max="5"/>
+        </decimal>
+
+
+        <string name="defaultTechnology" persistent="false"/>
+
+        <text name="comments" />
+
+        <dictionary name="masterOrderPositionStatus" dictionary="masterOrderPositionStatus"/>
+
     </fields>
 
     <hooks>

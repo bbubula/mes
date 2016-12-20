@@ -44,5 +44,5 @@
         <string name="technologyName"/>
         <string name="companyName"/>
     </fields>
-    <masterModel plugin="masterOrders" model="masterOrder" />
+    <masterModel plugin="masterOrders" model="masterOrdersPosition" />
 </model>
