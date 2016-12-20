@@ -39,7 +39,7 @@
 							this.addOnChangeListener({
 								onClick: function() {
 									if(window.canClose()) {
-										#{form}.performEvent('createOrder', []);
+										#{grid}.performEvent('createOrder', []);
 									}
 								}
 							});

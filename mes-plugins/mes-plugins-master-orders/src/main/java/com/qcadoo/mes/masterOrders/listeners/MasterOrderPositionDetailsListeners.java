@@ -39,6 +39,7 @@ import com.qcadoo.view.api.ribbon.RibbonGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +49,8 @@ public class MasterOrderPositionDetailsListeners {
     private static final String L_WINDOW_ACTIVE_MENU = "window.activeMenu";
 
     public void createOrder(final ViewDefinitionState view, final ComponentState state, final String[] args) {
-        GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference("masterOrderPositions");
+        state.addMessage("I'm here !!!!!",ComponentState.MessageType.INFO);
+        GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference("grid");
         List<Entity> selectedEntity = masterOrderPositionComponent.getSelectedEntities();
         if(selectedEntity.size() != 1){
             state.addMessage("You can chose only one position",ComponentState.MessageType.INFO);
@@ -56,7 +58,7 @@ public class MasterOrderPositionDetailsListeners {
             state.addMessage("You have to chose at least one",ComponentState.MessageType.INFO);
         }
         Entity masterOrderPosition = selectedEntity.get(0);
-        Long masterOrderId = masterOrderPosition.getLongField("masterorderid");
+        BigDecimal masterOrderId = masterOrderPosition.getDecimalField("masterOrderId");
         if (masterOrderId == null) {
             return;
         }
