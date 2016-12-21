@@ -154,7 +154,7 @@
                 </component>
                 <option type="header" value="true"/>
                 <option type="expression"
-                        value="#masterOrder['number'] + ' , ' + #masterOrder['company']['name']"/>
+                        value="(#masterOrder['company'] == null) ? #masterOrder['number'] : #masterOrder['number'] + ' , ' + #masterOrder['company']['name']"/>
             </component>
         </windowTab>
 
