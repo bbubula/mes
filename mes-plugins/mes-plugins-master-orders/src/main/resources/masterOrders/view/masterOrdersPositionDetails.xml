@@ -167,8 +167,5 @@
         <beforeRender
                 class="com.qcadoo.mes.masterOrders.hooks.MasterOrderProductDetailsHooks"
                 method="fillDefaultTechnology"/>
-        <beforeRender
-                class="com.qcadoo.mes.masterOrders.hooks.MasterOrderProductDetailsHooks"
-                method="showErrorWhenCumulatedQuantity"/>
     </hooks>
 </view>

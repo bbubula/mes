@@ -47,10 +47,10 @@
         <string name="unit"/>
 
 
-        <decimal name="masterOrderId"/>
+        <integer name="masterOrderId"/>
         <string name="masterOrderType"/>
-        <decimal name="productId"/>
-        <decimal name = "masterOrderProductId"/>
+        <integer name="productId"/>
+        <integer name = "masterOrderProductId"/>
     </fields>
     <masterModel plugin="masterOrders" model="masterOrderProduct" />
 </model>

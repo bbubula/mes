@@ -61,7 +61,7 @@ public class MasterOrderPositionDetailsListeners {
             return;
         }
         Entity masterOrderPosition = selectedEntity.get(0);
-        BigDecimal masterOrderId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.MASTER_ORDER_ID);
+        Integer masterOrderId = masterOrderPosition.getIntegerField(MasterOrdersPositionFields.MASTER_ORDER_ID);
         if (masterOrderId == null) {
             return;
         }
@@ -73,8 +73,8 @@ public class MasterOrderPositionDetailsListeners {
 
 
         if (masterOrderTypeValue.equals(MasterOrderType.MANY_PRODUCTS.getStringValue())) {
-            BigDecimal productId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.PRODUCT_ID);
-            BigDecimal masterOrderProductId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.MASTER_ORDER_PRODUCT_ID);
+            Integer productId = masterOrderPosition.getIntegerField(MasterOrdersPositionFields.PRODUCT_ID);
+            Integer masterOrderProductId = masterOrderPosition.getIntegerField(MasterOrdersPositionFields.MASTER_ORDER_PRODUCT_ID);
             parameters.put("form.masterOrderProduct", productId);
             parameters.put("form.masterOrderProductComponent", masterOrderProductId);
         }
