@@ -64,34 +64,39 @@
 					});
 				]]>
             </script>
+
             <option type="column" name="name" fields="name" link="true"
                     width="100"/>
-            <option type="column" name="masterOrderName" fields="masterOrderName" width="150"/>
             <option type="column" name="number" fields="number"
                     width="150" link="true"/>
+            <option type="column" name="masterOrderName" fields="masterOrderName" width="150" link="true"/>
 			<option type="column" name="deadline" fields="deadline"
 					width="80"/>
-            <option type="column" name="masterOrderPositionStatus" fields="masterOrderPositionStatus" width="55"/>
-            <option type="column" name="masterOrderQuantity" fields="masterOrderQuantity" width="35"/>
-            <option type="column" name="producedOrderQuantity" fields="producedOrderQuantity" width="35"/>
-            <option type="column" name="comments" fields="comments"
-                    width="45"/>
-            <option type="column" name="leftToRelease" fields="leftToRelease" hidden="true"/>
-			<option type="column" name="productNumber" fields="productNumber"
-					width="55"/>
-            <option type="column" name="productName" fields="productName"
+            <option type="column" name="companyName" fields="companyName"
                     width="55"/>
-            <option type="column" name="unit" fields="unit"
+            <option type="column" name="masterOrderStatus" fields="masterOrderStatus"
+                    width="55"/>
+            <option type="column" name="productNumber" fields="productNumber"
+                    width="55"/>
+            <option type="column" name="productName" fields="productName"
                     width="55"/>
             <option type="column" name="technologyName" fields="technologyName"
                     width="55"/>
-            <option type="column" name="companyName" fields="companyName"
+            <option type="column" name="masterOrderPositionStatus" fields="masterOrderPositionStatus" width="55"/>
+            <option type="column" name="comments" fields="comments"
+                    width="45"/>
+            <option type="column" name="masterOrderQuantity" fields="masterOrderQuantity" width="35"/>
+            <option type="column" name="cumulatedMasterOrderQuantity" fields="cumulatedMasterOrderQuantity" width="35"/>
+            <option type="column" name="leftToRelease" fields="leftToRelease"/>
+            <option type="column" name="producedOrderQuantity" fields="producedOrderQuantity" width="35"/>
+            <option type="column" name="unit" fields="unit"
                     width="55"/>
 
-            <option type="order" column="name" direction="desc"/>
+            <option type="order" column="number" direction="desc"/>
             <option type="searchable"
-                    value="masterOrderName,name,number,deadline,companyName"/>
-            <option type="orderable" value="masterOrderName,name,number,deadline,companyName"/>
+                    value="masterOrderName,name,number,deadline,companyName,masterOrderStatus,productNumber,productName,masterOrderPositionStatus,comments,masterOrderQuantity,unit"/>
+            <option type="orderable"
+                    value="masterOrderName,number,deadline,companyName"/>
 
            <option type="correspondingView" value="masterOrders/masterOrdersPositionDetails"/>
             <option type="correspondingComponent" value="form"/>

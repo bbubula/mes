@@ -30,19 +30,23 @@
 
     <fields>
         <string name="name" />
-        <string name="masterOrderName" />
         <string name="number" />
+        <string name="masterOrderName" />
         <datetime name="deadline"/>
-        <string name="masterOrderPositionStatus"/>
-        <string name="masterOrderQuantity"/>
-        <string name="producedOrderQuantity"/>
-        <string name="comments"/>
-        <string name="leftToRelease"/>
+        <string name="companyName"/>
+        <string name="masterOrderStatus"/>
         <string name="productNumber"/>
         <string name="productName"/>
-        <string name="unit"/>
         <string name="technologyName"/>
-        <string name="companyName"/>
+        <string name="masterOrderPositionStatus"/>
+        <string name="comments"/>
+        <decimal name="masterOrderQuantity"/>
+        <decimal name="cumulatedMasterOrderQuantity"/>
+        <decimal name="leftToRelease"/>
+        <decimal name="producedOrderQuantity"/>
+        <string name="unit"/>
+
+
         <decimal name="masterOrderId"/>
         <string name="masterOrderType"/>
         <decimal name="productId"/>

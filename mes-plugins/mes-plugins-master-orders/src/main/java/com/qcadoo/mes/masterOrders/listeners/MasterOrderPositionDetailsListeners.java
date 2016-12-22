@@ -54,9 +54,11 @@ public class MasterOrderPositionDetailsListeners {
         GridComponent masterOrderPositionComponent = (GridComponent) view.getComponentByReference(L_GRID);
         List<Entity> selectedEntity = masterOrderPositionComponent.getSelectedEntities();
         if(selectedEntity.size() != 1){
-            state.addMessage("You can chose only one position",ComponentState.MessageType.INFO);
+            state.addMessage("masterOrders.masterOrder.masterOrdersPosition.MoreEntitiesSelectedThanAllowed",ComponentState.MessageType.INFO);
+            return;
         }else if(selectedEntity.size() == 0){
-            state.addMessage("You have to chose at least one",ComponentState.MessageType.INFO);
+            state.addMessage("masterOrders.masterOrder.masterOrdersPosition.LessEntitiesSelectedThanAllowed",ComponentState.MessageType.INFO);
+            return;
         }
         Entity masterOrderPosition = selectedEntity.get(0);
         BigDecimal masterOrderId = masterOrderPosition.getDecimalField(MasterOrdersPositionFields.MASTER_ORDER_ID);
