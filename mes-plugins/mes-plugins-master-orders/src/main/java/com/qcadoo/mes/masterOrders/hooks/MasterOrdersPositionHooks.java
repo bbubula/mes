@@ -68,13 +68,13 @@ public class MasterOrdersPositionHooks {
         List<Entity> selectedEntity = masterOrderPositionComponent.getSelectedEntities();
         if(selectedEntity.size() == 1){
             button.setEnabled(true);
-            button.requestUpdate(true);
-            window.requestRibbonRender();
+
         }else{
             button.setEnabled(false);
-            button.requestUpdate(true);
-            window.requestRibbonRender();
         }
+        button.requestUpdate(true);
+        window.requestRibbonRender();
+        button.setMessage("masterOrders.masterOrder.masterOrdersPosition.LessEntitiesSelectedThanAllowed");
 
     }
 
