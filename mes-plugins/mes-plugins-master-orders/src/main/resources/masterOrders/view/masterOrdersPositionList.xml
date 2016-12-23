@@ -96,7 +96,7 @@
             <option type="searchable"
                     value="masterOrderName,name,number,deadline,companyName,masterOrderStatus,productNumber,productName,masterOrderPositionStatus,comments,masterOrderQuantity,unit"/>
             <option type="orderable"
-                    value="masterOrderName,number,deadline,companyName"/>
+                    value="masterOrderName,name,number,deadline,companyName,masterOrderStatus,productNumber,productName,masterOrderPositionStatus,comments,masterOrderQuantity,unit"/>
 
            <option type="correspondingView" value="masterOrders/masterOrdersPositionDetails"/>
             <option type="correspondingComponent" value="form"/>
